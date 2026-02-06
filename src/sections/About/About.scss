@@ -1,0 +1,49 @@
+.about {
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 100px;
+    padding-block: fluid(100, 40);
+    border-top: var(--border);
+    border-inline: var(--border);
+
+    @include laptop {
+      column-gap: 40px;
+    }
+
+    @include tablet-above {
+      padding-inline: fluid-to-laptop(150, 100);
+    }
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    row-gap: fluid-to-laptop(20, 16);
+  }
+
+  &__image {
+    width: fluid(598, 358);
+    border: var(--border);
+    border-radius: 16px;
+
+    @include mobile {
+      border-radius: 12px;
+    }
+  }
+
+  &__story-title {
+    padding: fluid(100, 40) 50px;
+    border-top: var(--border);
+    border-inline: var(--border);
+
+    @include mobile {
+      padding-inline: 24px;
+    }
+  }
+}

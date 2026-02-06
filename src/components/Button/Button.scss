@@ -1,0 +1,44 @@
+.button {
+  padding: fluid-to-laptop(16, 12);
+  border-radius: fluid-to-laptop(8, 6);
+  color: var(--color-gray-15);
+  background-color: var(--color-green-50);
+  border: none;
+
+  &:hover {
+    background-color: var(--color-gray-15);
+    color: var(--color-green-50);
+  }
+
+  &--transparent {
+    color: var(--color-white);
+    background-color: transparent;
+    border: var(--border);
+    backdrop-filter: blur(6px);
+
+    &:hover {
+      color: var(--color-gray-20);
+      background-color: var(--color-green-50);
+    }
+  }
+
+  &--gradient {
+    background: linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0.00) 100%);
+    border: 1px solid #2E2E2E;
+    color: var(--color-green-50);
+  }
+
+  &--gray-15 {
+    background-color: var(--color-gray-15);
+    color: var(--color-white);
+
+    @include hover {
+      background-color: var(--color-green-50);
+      color: var(--color-black);
+    }
+  }
+
+  &--large-padding {
+    padding-inline: fluid-to-laptop(44, 36);
+  }
+}

@@ -1,0 +1,57 @@
+.support {
+  padding-inline: fluid-to-laptop(268, 217);
+
+  @include laptop-above {
+    border-top: var(--border);
+    border-inline: var(--border);
+  }
+
+  @include laptop {
+    padding-inline: 0;
+  }
+
+  &__form {
+    display: grid;
+    gap: fluid-to-laptop(40, 30);
+    padding: 60px;
+    border-inline: var(--border);
+
+    @include laptop {
+      border-top: var(--border);
+    }
+
+    @include mobile-above {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      padding: 24px;
+    }
+
+    &-cell{
+      &--wide {
+        grid-column: -1 / 1;
+      }
+    }
+
+    &-checkbox-group {
+      display: grid;
+      gap: 24px fluid-to-laptop(24, 20);
+
+      @include mobile-above {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include mobile {
+        row-gap: 20px;
+      }
+    }
+
+    &-submit-button {
+      @include mobile-above {
+        grid-column: 1 / -1;
+        margin: auto;
+      }
+    }
+  }
+}

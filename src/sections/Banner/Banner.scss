@@ -1,0 +1,87 @@
+.banner {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 112px 274px;
+    padding-inline: 16px;
+    background: url('../../assets/images/banner/banner.png') center/cover no-repeat;
+    border-inline: var(--border);
+    border-bottom: var(--border);
+
+    @include mobile {
+      padding-block: 80px 205px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: fluid-to-laptop(40, 30);
+  }
+
+  &__description {
+    padding: fluid-to-laptop(24, 18) fluid(40, 20);
+    backdrop-filter: blur(6px);
+    border: var(--border);
+    border-radius: fluid-to-laptop(12, 8);
+    margin-bottom: fluid-to-laptop(50, 40);
+
+    @include mobile {
+      text-align: center;
+    }
+
+    @include mobile-above {
+      word-spacing: 6px;
+    }
+
+    .badge {
+      margin-right: 6px;
+
+      @include mobile {
+        display: contents;
+        color: inherit;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: 13px;
+  }
+
+  &__companies {
+    position: relative;
+
+    @include tablet-above {
+      padding-block: fluid-to-laptop(40, 30);
+      border-bottom: var(--border);
+    }
+
+    &-badge {
+      position: absolute;
+      @include abs-x;
+      margin-top: calc((#{fluid-to-laptop(40, 30)} + (#{fluid-to-laptop(20, 14)} / 2)) * -1.5);
+      background-color: var(--color-gray-10);
+      border: var(--border);
+      border-radius: 100px;
+      padding: fluid-to-laptop(20, 14);
+      white-space: nowrap;
+
+      @include tablet {
+        margin-top: calc(#{fluid-to-laptop(40, 30)} * -1);
+
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-block: fluid-to-laptop(20, 16); /* Отступ логотипа от границ сетки */
+
+      @include mobile {
+        padding-block: 30px;
+      }
+    }
+  }
+}

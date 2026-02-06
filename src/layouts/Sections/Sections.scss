@@ -1,0 +1,30 @@
+.section {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: fluid(50, 28);
+    padding-block: fluid(120, 50);
+    padding-inline: fluid(250, 16);
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-inline: var(--border);
+  }
+
+  &__logo {
+    width: fluid(80, 50);
+  }
+
+  &__wrapper {
+    display: grid;
+    row-gap: fluid(14, 6);
+    text-align: center;
+  }
+
+  &__description {
+    text-align: center;
+  }
+}

@@ -1,0 +1,53 @@
+.services-card {
+  padding: fluid(50, 30);
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(60, 24);
+  height: 100%;
+
+  &__wrapper {
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    column-gap: 14px;
+    row-gap: fluid-to-laptop(40, 30);
+    grid-template-areas:
+    'icon'
+    'info';
+
+    @include mobile {
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+      'icon title'
+      'desc desc';
+    }
+  }
+
+  &__pin {
+    grid-area: icon;
+  }
+
+  &__info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid-to-laptop(20, 14);
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__description {
+    grid-area: desc;
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: auto;
+  }
+}

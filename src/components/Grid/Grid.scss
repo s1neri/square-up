@@ -1,0 +1,102 @@
+.grid {
+  --gridColumns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--gridColumns), 1fr);
+
+  &--has-counter {
+    list-style-type: none;
+    counter-reset: item-count;
+
+    .grid__item {
+      counter-increment: item-count;
+    }
+  }
+
+  &--2 {
+    --gridColumns: 2;
+
+    @include mobile-above {
+      .grid__item:nth-child(odd) {
+        border-right: none;
+      }
+
+      .grid__item:not(:nth-last-child(-n+2)) {
+        border-bottom: none;
+      }
+    }
+
+    @include mobile {
+      --gridColumns: 1;
+
+      .grid__item:not(:last-child) {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &--3 {
+    --gridColumns: 3;
+
+    .grid__item:not(:nth-child(3n)) {
+      border-right: none;
+    }
+
+    @include mobile {
+      --gridColumns: 1;
+
+      .grid__item:not(:nth-child(3n)) {
+        border-right: none;
+      }
+    }
+  }
+
+  &--4 {
+    --gridColumns: 4;
+
+    @include mobile-above {
+      .grid__item:not(:nth-child(4n)) {
+        border-right: none;
+      }
+    }
+
+    @include mobile {
+      --gridColumns: 2;
+
+      .grid__item:nth-child(odd) {
+        border-right: none;
+      }
+
+      .grid__item:not(:nth-last-child(-n+2)) {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &--6 {
+    --gridColumns: 6;
+    justify-items: center;
+
+
+    @include tablet-above {
+      column-gap: 20px;
+
+      .grid__item {
+        border: none;
+      }
+    }
+
+    @include tablet {
+      --gridColumns: 3;
+    }
+
+    @include mobile {
+      --gridColumns: 2;
+    }
+  }
+
+  &__item {
+    justify-self: stretch;
+    border: var(--border-width-s) solid var(--color-gray-20);
+  }
+}

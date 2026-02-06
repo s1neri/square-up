@@ -1,0 +1,9 @@
+.pin {
+  @include flex-center(true);
+
+  padding: fluid(24, 16);
+  color: var(--color-green-50);
+  background: linear-gradient(229deg, rgba(158, 255, 0, 0.20) -68.25%, rgba(158, 255, 0, 0.00) 32.16%), linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0.00) 100%);
+  border: var(--border);
+  border-radius: fluid(10, 6);
+}

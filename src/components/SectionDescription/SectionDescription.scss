@@ -1,0 +1,29 @@
+.section-description {
+  &__header {
+    display: grid;
+    justify-items: start;
+    row-gap: fluid(50, 30);
+    border: var(--border);
+    padding: fluid(120, 40) fluid(50, 16) fluid(50, 16);
+  }
+
+  &__wrapper {
+    display: grid;
+    row-gap: fluid(14, 6);
+  }
+
+  &__body {
+    &-title {
+      @include fluid-text(28, 20);
+
+      padding: fluid-to-laptop(50, 40);
+      color: var(--color-gray-60);
+      font-weight: 500;
+      border-inline: var(--border);
+
+      @include mobile {
+        text-align: center;
+      }
+    }
+  }
+}

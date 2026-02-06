@@ -1,0 +1,11 @@
+.choose-card {
+  padding: fluid(80, 40);
+  display: grid;
+  row-gap: fluid(40, 24);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(20, 14);
+  }
+}

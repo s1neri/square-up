@@ -1,0 +1,92 @@
+.start-project {
+  &__main {
+    display: grid;
+    row-gap: fluid(50, 30);
+    padding: fluid(80, 40) fluid(80, 24);
+    border-inline: var(--border);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(40, 30);
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 24px;
+    }
+  }
+
+  &__logo {
+    width: fluid(150, 80);
+  }
+
+  &__wrapper {
+    display: grid;
+    row-gap: fluid(20, 10);
+  }
+
+  &__title {
+    color: var(--color-gray-60);
+    font-weight: 500;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    color: var(--color-gray-60);
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(51, 40);
+    row-gap: 20px;
+    padding: fluid-to-laptop(24, 20) fluid(40, 20);
+    border: var(--border);
+    background-color: rgba(36, 36, 36, 0.20);
+    backdrop-filter: blur(6px);
+    border-radius: fluid-to-laptop(12, 10);
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(20, 14);
+    row-gap: 14px;
+
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__welcome {
+    font-size: fluid-to-laptop(20, 18);
+    color: var(--color-gray-60);
+  }
+
+  &__badge {
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    white-space: nowrap;
+
+    @include mobile-s {
+      width: 100%;
+    }
+  }
+}

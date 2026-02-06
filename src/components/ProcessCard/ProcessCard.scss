@@ -1,0 +1,50 @@
+.process-card {
+  display: grid;
+  row-gap: fluid(50, 30);
+  padding: fluid(100, 40) fluid(50, 24);
+
+  &__wrapper {
+    .grid--has-counter & {
+      display: inline-flex;
+      column-gap: 14px;
+
+      @include mobile {
+        column-gap: 10px;
+      }
+    }
+  }
+
+  &__number {
+    .grid--has-counter & {
+      display: flex;
+      align-items: end;
+
+      &::before {
+        @include fluid-text(150, 80);
+
+        content: counter(item-count, decimal-leading-zero);
+        justify-content: end;
+        font-weight: 600;
+        line-height: 0.80;
+        color: var(--color-green-80);
+      }
+    }
+  }
+
+  &__title {
+    align-self: end;
+    flex-grow: 1;
+    padding-bottom: fluid(50, 20);
+    border-bottom: var(--border);
+    color: var(--color-green-80);
+
+    .grid--has-counter & {
+      padding-bottom: fluid(26, 14);
+      padding-left: 10px;
+    }
+  }
+
+  &__description {
+    color: var(--color-gray-60);
+  }
+}

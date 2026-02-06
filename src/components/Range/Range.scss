@@ -1,0 +1,103 @@
+.range {
+  display: grid;
+  row-gap: fluid(40, 24);
+  height: fluid(170, 110);
+  overflow: hidden;
+
+  &__wrapper {
+    display: grid;
+    row-gap: 14px;
+
+    @include mobile {
+      row-gap: 6px;
+    }
+  }
+
+  &__input {
+    appearance: none;
+    background: none;
+    height: 4px;
+    accent-color: var(--color-green-50);
+
+    @include mobile {
+      height: 2px;
+    }
+
+    &::-webkit-slider-runnable-track {
+      box-sizing: border-box;
+      height: 4px;
+      background-color: var(--color-gray-20);
+
+      @include mobile {
+        height: 2px;
+      }
+    }
+
+    &::-moz-range-track {
+      box-sizing: border-box;
+      background-color: var(--color-gray-20);
+    }
+
+    &::-webkit-slider-thumb {
+      @include square(fluid-to-laptop(30, 20));
+
+      -webkit-appearance: none;
+      margin-top: -7.5px;
+      border: none;
+      border-radius: 50%;
+      background-color: var(--color-green-50);
+      box-shadow: 0 0 0 4px inset var(--color-gray-30);
+      transition-duration: var(--transition-duration);
+    }
+
+    &::-moz-range-track {
+      @include square(fluid-to-laptop(30, 20));
+      margin-top: 0;
+      border: none;
+      border-radius: 50%;
+      background-color: var(--color-green-50);
+      box-shadow: 0 0 0 4px inset var(--color-gray-30);
+      transition-duration: var(--transition-duration);
+    }
+
+    &:focus-visible {
+      @include focus-visible;
+    }
+
+    &:hover::-webkit-slider-thumb,
+    &:focus-visible::-webkit-slider-thumb {
+      box-shadow: 0 0 0 6px inset var(--color-gray-30);
+    }
+
+    &:hover::-moz-range-track,
+    &:focus-visible::-moz-range-track {
+      box-shadow: 0 0 0 6px inset var(--color-gray-30);
+    }
+
+    &:active::-webkit-slider-thumb {
+      box-shadow: 0 0 0 30px inset var(--color-gray-30);
+    }
+
+    &:active::-moz-range-track {
+      box-shadow: 0 0 0 30px inset var(--color-gray-30);
+    }
+
+    &:disabled::-webkit-slider-thumb {
+      @include disabled;
+      box-shadow: 0 0 0 30px inset gray;
+    }
+
+    &:disabled::-moz-range-track {
+      @include disabled;
+      box-shadow: 0 0 0 30px inset gray;
+    }
+
+    &::-webkit-slider-thumb {
+      border-image-outset: 0 100vw;
+      border-image-repeat: stretch;
+      border-image-slice: 0 1;
+      border-image-source: linear-gradient(90deg, var(--color-green-50) 50%, var(--color-gray-20) 0);
+      border-image-width: calc(50% - 2px) 100vw;
+    }
+  }
+}
