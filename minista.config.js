@@ -1,11 +1,10 @@
 // minista.config.ts
 import { defineConfig } from "minista"
 import path from 'path'
-import process from 'node:process'
 
 export default defineConfig({
   root: "",
-  base: process.env.NODE_ENV === "production" ? "/square-up/" : "/",
+  base: "/",
   public: "public",
   out: "dist",
   assets: {
